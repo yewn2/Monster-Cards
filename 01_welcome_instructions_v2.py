@@ -29,6 +29,6 @@ welcome_instructions("Monster Cards",
                       "To delete a card, enter the card ID and confirm your "
                       "choice.",
                       "To find a card, enter the specific card ID.",
-                      "'Output all' allows you to see which card are already "
+                      "'Output all' allows you to see which cards are already "
                       "present in the menu.",
                       "Once you have finished, exit the program."])
