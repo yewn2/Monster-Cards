@@ -19,7 +19,7 @@ choice = easygui.buttonbox("What would you like to do?",
 while choice != "Exit":
     # display action screen with choices
     choice = easygui.buttonbox("What would you like to do?",
-                               "BURGER MENU COMBO EDITOR",
+                               "MONSTER CARD DATABASE EDITOR",
                                ["Add card", "Delete card",
                                 "Find card", "Output all", "Exit"])
 
