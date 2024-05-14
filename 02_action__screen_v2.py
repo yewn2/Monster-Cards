@@ -31,7 +31,7 @@ def action_screen(cards):
 
         # display action screen with choices again
         choice = easygui.buttonbox("What would you like to do?",
-                                   "BURGER MENU COMBO EDITOR",
+                                   "MONSTER CARD DATABASE EDITOR",
                                    ["Add card", "Delete card",
                                     "Find card", "Output all", "Exit"])
 
