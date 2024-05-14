@@ -140,12 +140,11 @@ card_dict = {
 # welcome the user
 welcome_instructions("Monster Cards",
                      ["Choose an action after this box",
-                      "To add a card: enter a card ID, then fill in the stats "
-                      "for the card, then confirm "
-                      "your entry.",
-                      "To delete a card, enter the card ID and confirm your "
+                      "To add a card: enter a card name, then fill in the "
+                      "stats for the card, then confirm your entry.",
+                      "To delete a card, enter the card name and confirm your "
                       "choice.",
-                      "To find a card, enter the specific card ID.",
+                      "To find a card, enter the specific card name.",
                       "'Output all' allows you to see which cards are already "
                       "present in the menu.",
                       "Once you have finished, exit the program."])
