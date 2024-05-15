@@ -9,7 +9,7 @@ Asks user to enter card name and fill in stats categories before confirming.
 # imports
 import easygui
 
-# setting up initial card list
+# setting up initial card database
 card_dict = {
     "Stoneling": {
         "Strength": "7",
