@@ -56,7 +56,7 @@ def add_card(database):
 
     while monster_stats != "I don't want to change anything":
         database[new_monster][monster_stats] = str(easygui.integerbox("Enter a new value for the "
-                                                                      f"{monster_stats} category: \n"
+                                                                      f"{monster_stats} category:\n"
                                                                       f"(must be a whole number "
                                                                       f"between 0 and 25)",
                                                                       "New Stat", 0,
