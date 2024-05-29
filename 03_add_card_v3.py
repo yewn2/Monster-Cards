@@ -11,13 +11,13 @@ def add_card(database):
     # ask user for card name
     new_monster = easygui.enterbox("Enter a name for your new monster card:",
                                    "New Monster")
-    
+
     # name confirmation
     confirm_monster = easygui.buttonbox(f"The name you want to have for your new "
                                         f"card is {new_monster}.",
                                         "Monster Name Confirmation",
                                         ["Yes", "No"])
-    
+
     while confirm_monster != "Yes":
         # ask user for card name again
         new_monster = easygui.enterbox("Enter a name for your new monster card:",
@@ -28,14 +28,14 @@ def add_card(database):
             f"card is {new_monster}.",
             "Monster Name Confirmation",
             ["Yes", "No"])
-    
+
     # add card name to card database; set stat categories by default  to 0
     database[new_monster] = {}
     database[new_monster]["Strength"] = "0"
     database[new_monster]["Speed"] = "0"
     database[new_monster]["Stealth"] = "0"
     database[new_monster]["Cunning"] = "0"
-    
+
     # entering stats for new card
     monster_stats = easygui.buttonbox(f"Your new monster {new_monster}'s "
                                       f"current stats are:\n"
@@ -53,19 +53,19 @@ def add_card(database):
                                       ["Strength", "Speed", "Stealth",
                                        "Cunning", "I don't want "
                                                   "to change anything"])
-    
+
     while monster_stats != "I don't want to change anything":
         database[new_monster][monster_stats] = str(easygui.integerbox("Enter a new value for the "
-                                                                       f"{monster_stats} category: \n"
-                                                                       f"(must be a whole number "
-                                                                       f"between 0 and 25)",
-                                                                       "New Stat", 0,
-                                                                       0, 25))
-    
+                                                                      f"{monster_stats} category: \n"
+                                                                      f"(must be a whole number "
+                                                                      f"between 0 and 25)",
+                                                                      "New Stat", 0,
+                                                                      0, 25))
+
         # making sure the statistic value is an integer
         if database[new_monster][monster_stats] == "None":
             database[new_monster][monster_stats] = "0"
-    
+
         monster_stats = easygui.buttonbox(f"Your new monster {new_monster}'s "
                                           f"current stats are:\n"
                                           f"\tStrength: "
@@ -147,7 +147,6 @@ card_dict = {
         "Cunning": "2"
     },
 }
-
 
 # main program
 add_card(card_dict)
