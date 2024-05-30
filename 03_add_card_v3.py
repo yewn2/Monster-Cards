@@ -18,7 +18,15 @@ def add_card(database):
                                         "Monster Name Confirmation",
                                         ["Yes", "No"])
 
+    # check if card already exists in the dictionary
+    if new_monster.lower() in (monster_name.lower() for monster_name in database):
+        confirm_monster = "Present"
+
     while confirm_monster != "Yes":
+        # if the card name is already existing inform the user
+        if confirm_monster == "Present":
+            easygui.msgbox(f"The card name {new_monster} is already present in the card database.",
+                           "Card already exists")
         # ask user for card name again
         new_monster = easygui.enterbox("Enter a name for your new monster card:",
                                        "New Monster")
@@ -28,6 +36,10 @@ def add_card(database):
             f"card is {new_monster}.",
             "Monster Name Confirmation",
             ["Yes", "No"])
+
+        # check if card already exists in the dictionary
+        if new_monster.lower() in (monster_name.lower() for monster_name in database):
+            confirm_monster = "Present"
 
     # add card name to card database; set stat categories by default  to 0
     database[new_monster] = {}
