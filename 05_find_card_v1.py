@@ -104,7 +104,7 @@ while search_card:
                     "Would you like to enter another card name to find?",
                     "Try again?", ["Yes", "No"])
                 if again == "No":
-                    search_card = False
+                    search_card = True
         else:
             easygui.msgbox("You have not entered a card to find.", "No Name")
             search_card = False
