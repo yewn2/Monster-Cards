@@ -111,9 +111,4 @@ card_dict = {
 }
 
 # main program
-print(card_dict)
 delete_card(card_dict)
-print()
-print('-' * 100)
-print()
-print(card_dict)
