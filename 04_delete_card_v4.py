@@ -10,9 +10,9 @@ import easygui
 
 def delete_card(database):
     # loop to continue asking for card ID and searching database
-    find_card = True
+    search_card = True
     
-    while find_card:
+    while search_card:
         # ask user for card ID to find
         monster_ID = easygui.enterbox("Enter the name of the card you wish to delete:",
                                       "Monster Name")
@@ -23,7 +23,7 @@ def delete_card(database):
                 # search dictionary for card ID
                 for card_ID, card_stats in database.items():
                     if card_ID == monster_ID:
-                        find_card = False
+                        search_card = False
                         stats_lst = []
                         for stat, value in card_stats.items():
                             stats_lst.append(f"{stat} : {value}")
@@ -39,18 +39,18 @@ def delete_card(database):
                             easygui.msgbox(f"Monster Card '{monster_ID}' deleted.", "All Done!")
                             break
                     else:
-                        find_card = True
+                        search_card = True
 
                 # ask if user wants to try again
-                if find_card:
+                if search_card:
                     easygui.msgbox(f"Sorry, the card {monster_ID} could not be deleted.", "Failure")
                     again = easygui.buttonbox("Would you like to enter another card name to delete?",
                                               "Try again?", ["Yes", "No"])
                     if again == "No":
-                        find_card = False
+                        search_card = False
             else:
                 easygui.msgbox("You have not entered a card to delete.", "No Name")
-                find_card = False
+                search_card = False
         else:
             easygui.msgbox("Action cancelled. No card deleted.", "Cancelled")
             return
