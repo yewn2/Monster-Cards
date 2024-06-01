@@ -24,7 +24,7 @@ def welcome_instructions(program_name, instruction_list):
 def action_screen(cards):
     # display action screen with choices
     choice = easygui.buttonbox("What would you like to do?",
-                               "MONSTER CARDS",
+                               "MONSTER CARD DATABASE EDITOR",
                                ["Add card", "Delete card",
                                 "Find card", "Output all", "Exit"])
 
@@ -42,7 +42,7 @@ def action_screen(cards):
 
         # display action screen with choices again
         choice = easygui.buttonbox("What would you like to do?",
-                                   "MONSTER CARD BASE EDITOR",
+                                   "MONSTER CARD DATABASE EDITOR",
                                    ["Add card", "Delete card",
                                     "Find card", "Output all", "Exit"])
 
