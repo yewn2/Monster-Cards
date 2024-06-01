@@ -259,6 +259,7 @@ def find_card(database):
 
 # function to edit a card
 def edit_card(database):
+    monster_ID = ""
     # loop to continue asking for card ID and searching database
     search_card = True
 
@@ -300,9 +301,39 @@ def edit_card(database):
                 search_card = True
         else:
             easygui.msgbox("Action cancelled. No card edited.", "Cancelled")
-            break
+            return
 
-        # entering stats for new card
+    # entering stats for new card
+    monster_stats = easygui.buttonbox(f"Monster card: {monster_ID}'s "
+                                      f"current stats are:\n"
+                                      f"\tStrength: "
+                                      f"{database[monster_ID]['Strength']}\n"
+                                      f"\tSpeed: "
+                                      f"{database[monster_ID]['Speed']}\n"
+                                      f"\tStealth: "
+                                      f"{database[monster_ID]['Stealth']}\n"
+                                      f"\tCunning: "
+                                      f"{database[monster_ID]['Cunning']}\n"
+                                      f"Please choose which of the current "
+                                      f"categories you would like to change.",
+                                      "Current Monster Statistics",
+                                      ["Strength", "Speed", "Stealth",
+                                       "Cunning", "Done"])
+
+    while monster_stats != "Done":
+        database[monster_ID][monster_stats] = str(easygui.integerbox(f"Enter a new value "
+                                                                     f"for the {monster_stats} "
+                                                                     f"category:\n"
+                                                                     f"(must be a whole number "
+                                                                     f"from 0 to 25)",
+                                                                     "Change Stat",
+                                                                     0, 0,
+                                                                     25))
+
+        # making sure the statistic value is an integer
+        if database[monster_ID][monster_stats] == "None":
+            database[monster_ID][monster_stats] = "0"
+
         monster_stats = easygui.buttonbox(f"Monster card: {monster_ID}'s "
                                           f"current stats are:\n"
                                           f"\tStrength: "
@@ -319,38 +350,8 @@ def edit_card(database):
                                           ["Strength", "Speed", "Stealth",
                                            "Cunning", "Done"])
 
-        while monster_stats != "Done":
-            database[monster_ID][monster_stats] = str(easygui.integerbox(f"Enter a new value "
-                                                                         f"for the {monster_stats} "
-                                                                         f"category:\n"
-                                                                         f"(must be a whole number "
-                                                                         f"from 0 to 25)",
-                                                                         "Change Stat",
-                                                                         0, 0,
-                                                                         25))
-
-            # making sure the statistic value is an integer
-            if database[monster_ID][monster_stats] == "None":
-                database[monster_ID][monster_stats] = "0"
-
-            monster_stats = easygui.buttonbox(f"Monster card: {monster_ID}'s "
-                                              f"current stats are:\n"
-                                              f"\tStrength: "
-                                              f"{database[monster_ID]['Strength']}\n"
-                                              f"\tSpeed: "
-                                              f"{database[monster_ID]['Speed']}\n"
-                                              f"\tStealth: "
-                                              f"{database[monster_ID]['Stealth']}\n"
-                                              f"\tCunning: "
-                                              f"{database[monster_ID]['Cunning']}\n"
-                                              f"Please choose which of the current "
-                                              f"categories you would like to change.",
-                                              "Current Monster Statistics",
-                                              ["Strength", "Speed", "Stealth",
-                                               "Cunning", "Done"])
-
-        easygui.msgbox(f"Monster card: {monster_ID} changed.",
-                       "Card changed", )
+    easygui.msgbox(f"Monster card: {monster_ID} changed.",
+                   "Card changed", )
 
 
 # function to print all cards
