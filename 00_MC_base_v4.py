@@ -1,5 +1,5 @@
 """
-Base component version 3
+Base component version 4
 Implemented 'Find card' and 'Output all' with subcomponent 'Card formatter'
 """
 
@@ -151,8 +151,7 @@ def add_card(database):
                                           f"categories you would like to change.",
                                           "Current Monster Statistics",
                                           ["Strength", "Speed", "Stealth",
-                                           "Cunning", "I don't want "
-                                                      "to change anything"])
+                                           "Cunning", "Done"])
 
 
 # function to delete a card
