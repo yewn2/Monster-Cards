@@ -14,9 +14,9 @@ def card_formatter(card):
     emoji_card = emoji_card[:index] + "🥷" + emoji_card[index:]
     index = card.find("Cunning")
     emoji_card = emoji_card[:(index + 3)] + "🧠" + emoji_card[(index + 3):]
-    print("~" * 100)
+    print("~" * 25)
     print(emoji_card)
-    print("~" * 100)
+    print("~" * 25)
 
 
 def output_all(database):
